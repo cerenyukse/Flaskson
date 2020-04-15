@@ -1,6 +1,6 @@
 
 import flask
-from flask import request
+from flask import request, render_template
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
@@ -10,7 +10,7 @@ CORS(app)
 # main index page route
 @app.route('/')
 def home():
-    return '<h1>API is working.. </h1>'
+    return render_template('untitled.html')
 
 @app.route('/predict',methods=['GET'])
 def predict():
